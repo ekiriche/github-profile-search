@@ -32,6 +32,8 @@ const Button = (props: ButtonProps) => {
                 root: classes.root
             }}
             href={linkToProfile}
+            target="_blank"
+            rel="noopener noreferrer"
         >
             {text || "Кнопка"}
         </MaterialButton>

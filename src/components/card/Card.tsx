@@ -14,7 +14,7 @@ const Card = (props: CardProps) => {
     return (
         <div className="card-wrapper">
             <div className="card-left-container">
-                <img src={imageSrc} className="card-image" />
+                <img src={imageSrc} className="card-image" alt={`${login}-img`}/>
                 <div className="card-name">{login}</div>
             </div>
             <div className="button-container">
