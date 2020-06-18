@@ -3,7 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import {Button as MaterialButton} from "@material-ui/core";
 
 interface ButtonProps {
-    text: string;
+    text?: string;
+    linkToProfile: string;
 }
 
 const useStyles = makeStyles(() => ({
@@ -16,21 +17,23 @@ const useStyles = makeStyles(() => ({
         fontSize: "12px",
         lineHeight: "15px",
         fontWeight: 500,
-        padding: "6px 18px"
+        padding: "6px 18px",
+        textTransform: "none"
     }
 }));
 
 const Button = (props: ButtonProps) => {
     const classes = useStyles();
-    const {text} = props;
+    const {text, linkToProfile} = props;
 
     return (
         <MaterialButton
             classes={{
                 root: classes.root
             }}
+            href={linkToProfile}
         >
-            {text}
+            {text || "Кнопка"}
         </MaterialButton>
     );
 };
