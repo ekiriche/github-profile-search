@@ -23,7 +23,7 @@ const Card = (props: CardProps) => {
                 </Link>
             </div>
             <div className="button-container">
-                <Button linkToProfile={linkToProfile} />
+                <Button link={linkToProfile} />
             </div>
         </div>
     );

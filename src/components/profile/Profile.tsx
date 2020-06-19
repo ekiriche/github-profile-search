@@ -3,6 +3,8 @@ import {useLocation} from "react-router";
 import axios from "axios";
 import moment from "moment";
 import "./Profile.sass";
+import Button from "../button/Button";
+import {Link} from "react-router-dom";
 
 interface ProfileInfo {
     avatar_url: string;
@@ -39,16 +41,21 @@ const Profile = () => {
     }, []);
 
     return (
-            profileInfo?.avatar_url ?
-                <div className="profile-wrapper">
-                    <img src={profileInfo.avatar_url} className="profile-image" alt={`${login}-image`} />
-                    <div className="profile-info-container">
-                        <div className="profile-name">{profileInfo?.name}</div>
-                        {profileInfo?.location && <div className="profile-location">{profileInfo?.location}</div>}
-                        <div className="profile-created-at">From {moment(profileInfo?.created_at).format("DD/MM/YYYY")}</div>
-                    </div>
-                </div> :
-                null
+        <React.Fragment>
+            <Link to='/' className="profile-back-link">
+                <Button text="Back" />
+            </Link>
+                {profileInfo?.avatar_url ?
+                    <div className="profile-wrapper">
+                        <img src={profileInfo.avatar_url} className="profile-image" alt={`${login}-image`} />
+                        <div className="profile-info-container">
+                            <div className="profile-name">{profileInfo?.name}</div>
+                            {profileInfo?.location && <div className="profile-location">{profileInfo?.location}</div>}
+                            <div className="profile-created-at">From {moment(profileInfo?.created_at).format("DD/MM/YYYY")}</div>
+                        </div>
+                    </div> :
+                    null}
+        </React.Fragment>
     );
 };
 

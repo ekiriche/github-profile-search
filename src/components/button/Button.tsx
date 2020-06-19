@@ -4,7 +4,7 @@ import {Button as MaterialButton} from "@material-ui/core";
 
 interface ButtonProps {
     text?: string;
-    linkToProfile: string;
+    link?: string;
 }
 
 const useStyles = makeStyles(() => ({
@@ -25,14 +25,14 @@ const useStyles = makeStyles(() => ({
 
 const Button = (props: ButtonProps) => {
     const classes = useStyles();
-    const {text, linkToProfile} = props;
+    const {text, link} = props;
 
     return (
         <MaterialButton
             classes={{
                 root: classes.root
             }}
-            href={linkToProfile}
+            href={link || ""}
             target="_blank"
             rel="noopener noreferrer"
         >
