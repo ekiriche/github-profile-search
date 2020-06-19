@@ -16,9 +16,10 @@ const useStyles = makeStyles(() => ({
         borderRadius: "34px",
         fontSize: "12px",
         lineHeight: "15px",
-        fontWeight: 500,
+        fontWeight: 600,
         padding: "6px 18px",
-        textTransform: "none"
+        textTransform: "none",
+        fontFamily: "Helvetica Neue"
     }
 }));
 
