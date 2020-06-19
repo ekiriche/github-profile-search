@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/app/App';
 import * as serviceWorker from './serviceWorker';
+import {BrowserRouter, Route} from 'react-router-dom';
+import Profile from "./components/profile/Profile";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Route exact path='/' component={App} />
+    <Route exact path='/:login' component={Profile} />
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
